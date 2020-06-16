@@ -1,14 +1,16 @@
 ﻿using System;
 
-namespace juegoIA
+namespace TPF_Almada_Luis
 {
 	class Juego
 	{
 		public static void Main(string[] args)
 		{
-				Game game = new Game();
-				game.play();
-			    Console.ReadKey();
+			Menu menu=new Menu();
+			menu.pantallaBienvenida();
+			Game game = new Game();
+			game.play();
+		    Console.ReadKey();
 		}
 	}
 }

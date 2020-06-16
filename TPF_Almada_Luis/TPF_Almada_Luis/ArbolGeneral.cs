@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace juegoIA
+namespace TPF_Almada_Luis
 {
 	public class ArbolGeneral<T>
-	{
-		
+	{		
 		private NodoGeneral<T> raiz;
-
+		
 		public ArbolGeneral(T dato) {
 			this.raiz = new NodoGeneral<T>(dato);
 		}

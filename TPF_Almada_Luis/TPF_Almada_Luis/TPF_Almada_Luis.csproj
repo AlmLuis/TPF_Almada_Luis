@@ -52,6 +52,7 @@
     <Compile Include="HumanPlayer.cs" />
     <Compile Include="Juego.cs" />
     <Compile Include="Jugador.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="NodoGeneral.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

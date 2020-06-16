@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace juegoIA
+namespace TPF_Almada_Luis
 {
 	public class ComputerPlayer: Jugador
 	{
 		
 		public ComputerPlayer()
 		{
+			
 		}
 		
 		public override void  incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)

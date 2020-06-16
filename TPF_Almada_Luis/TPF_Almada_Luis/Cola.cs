@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace juegoIA
+namespace TPF_Almada_Luis
 {
 	public class Cola<T>
-	{
-
-		
-		private List<T> datos = new List<T>();
-	
+	{		
+		private List<T> datos = new List<T>();	
 		public void encolar(T elem) {
 			this.datos.Add(elem);
 		}
@@ -23,8 +20,8 @@ namespace juegoIA
 			return this.datos[0]; 
 		}
 		
-			public bool esVacia() {
-				return this.datos.Count == 0;
-			}
+		public bool esVacia() {
+			return this.datos.Count == 0;
 		}
+	}
 }

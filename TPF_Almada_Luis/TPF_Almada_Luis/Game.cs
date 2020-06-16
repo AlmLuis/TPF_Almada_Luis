@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace juegoIA
+namespace TPF_Almada_Luis
 {
 
 	public class Game
@@ -39,6 +39,7 @@ namespace juegoIA
 		
 		private void printScreen()
 		{
+			Console.Clear();
 			Console.WriteLine();
 			Console.WriteLine("Limite:" + limite.ToString());
 		}
@@ -57,9 +58,9 @@ namespace juegoIA
 		private void printWinner()
 		{
 			if (!juegaHumano) {
-				Console.WriteLine("Gano el Ud");
+				Console.WriteLine("Ud ha ganado!!!");
 			} else {
-				Console.WriteLine("Gano Computer");
+				Console.WriteLine("Gano Computer!!!");
 			}
 			
 		}

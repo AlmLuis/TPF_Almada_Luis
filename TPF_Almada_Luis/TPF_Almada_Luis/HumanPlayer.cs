@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace juegoIA
+namespace TPF_Almada_Luis
 {
 
 	public class HumanPlayer : Jugador
@@ -60,7 +60,6 @@ namespace juegoIA
 		}
 		
 		public override void cartaDelOponente(int carta){
-		}
-		
+		}		
 	}
 }
