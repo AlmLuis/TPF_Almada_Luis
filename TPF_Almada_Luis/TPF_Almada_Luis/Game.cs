@@ -41,7 +41,9 @@ namespace TPF_Almada_Luis
 		{
 			Console.Clear();
 			Console.WriteLine();
-			Console.WriteLine("Limite:" + limite.ToString());
+			Console.WriteLine("A pensar. . . ");
+			Console.WriteLine();
+			Console.WriteLine("El limite es:" + limite.ToString());
 		}
 		
 		private void turn(Jugador jugador, Jugador oponente, List<int> naipes)
@@ -60,7 +62,7 @@ namespace TPF_Almada_Luis
 			if (!juegaHumano) {
 				Console.WriteLine("Ud ha ganado!!!");
 			} else {
-				Console.WriteLine("Gano Computer!!!");
+				Console.WriteLine("G A M E  O V E R - - - Ha ganado Computer!!!");
 			}
 			
 		}

@@ -1,5 +1,6 @@
 C:\Users\luis\Desktop\TPF_Almada_Luis\TPF_Almada_Luis\TPF_Almada_Luis\bin\Debug\TPF_Almada_Luis.exe
 C:\Users\luis\Desktop\TPF_Almada_Luis\TPF_Almada_Luis\TPF_Almada_Luis\bin\Debug\TPF_Almada_Luis.pdb
-C:\Users\luis\Desktop\TPF_Almada_Luis\TPF_Almada_Luis\TPF_Almada_Luis\obj\Debug\TPF_Almada_Luis.csprojResolveAssemblyReference.cache
 C:\Users\luis\Desktop\TPF_Almada_Luis\TPF_Almada_Luis\TPF_Almada_Luis\obj\Debug\TPF_Almada_Luis.exe
 C:\Users\luis\Desktop\TPF_Almada_Luis\TPF_Almada_Luis\TPF_Almada_Luis\obj\Debug\TPF_Almada_Luis.pdb
+C:\Users\luis\Desktop\TPF_Almada_Luis\TPF_Almada_Luis\TPF_Almada_Luis\obj\Debug\TPF_Almada_Luis.csprojAssemblyReference.cache
+C:\Users\luis\Desktop\TPF_Almada_Luis\TPF_Almada_Luis\TPF_Almada_Luis\obj\Debug\TPF_Almada_Luis.csproj.CoreCompileInputs.cache
