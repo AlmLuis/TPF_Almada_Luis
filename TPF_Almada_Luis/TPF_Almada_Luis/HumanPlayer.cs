@@ -38,7 +38,21 @@ namespace TPF_Almada_Luis
 					Console.Write(", ");
 				}
 			}
-		
+
+			// a desde aca estoy probando q se muestren las cartas de la IA
+			Console.WriteLine("\n");
+			Console.WriteLine("Los naipes de Computer son:");
+			for (int i = 0; i < naipesComputer.Count; i++)
+			{
+				Console.Write(naipesComputer[i].ToString());
+				if (i < naipesComputer.Count - 1)
+				{
+					Console.Write(", ");
+				}
+			}
+
+			// hasta aca es lo q agregue
+
 			Console.WriteLine();
 			Console.Write("Desea realizar una jugada?(S/N): ");
 			string cont = Console.ReadLine();
