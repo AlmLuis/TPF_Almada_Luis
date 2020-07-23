@@ -47,62 +47,27 @@ namespace TPF_Almada_Luis
 				}
 			}
 			// hasta aca es lo q agregue
-			Console.WriteLine();
-			Console.Write("Desea realizar una jugada?(S/N): ");
-			string cont = Console.ReadLine();
-			switch (cont)
+			if (!random_card)
 			{
-				case "s":
-				case "S":
-					if (!random_card)
-					{
-						Console.Write("Cual desea arrojar?");
-						string entrada = Console.ReadLine();
+				Console.WriteLine();
+				Console.WriteLine();
+				Console.Write("Cual desea arrojar? ");
+				string entrada = Console.ReadLine();
 
-						Int32.TryParse(entrada, out carta);
-						while (!naipes.Contains(carta))
-						{
-							Console.Write("Ha elegido una opcion Invalida. Por favor arroje otro naipe:");
-							entrada = Console.ReadLine();
-							Int32.TryParse(entrada, out carta);//toma la variable entrada, la convierte a int y la devuelve como carta
-						}
-					}
-					else
-					{
-						var random = new Random();
-						int index = random.Next(naipes.Count);
-						carta = naipes[index];
-						Console.Write("Ingrese naipe:" + carta.ToString());
-					}
-					break;
-				case "n":
-				case "N":
-					Console.Clear();
-					Console.WriteLine();
-					Console.WriteLine("G A M E  O V E R");
-					Console.WriteLine();
-					Console.Write("Desea intentar una nueva partida(S/N): ");
-					string opcion = Console.ReadLine();
-					switch (opcion)
-					{
-						case "s":
-						case "S":
-							Game game = new Game();
-							game.play();
-							break;
-						case "n":
-						case "N":
-							Console.Clear();
-							Console.WriteLine("G A M E  O V E R");
-							Console.WriteLine();
-							Console.WriteLine("Gracias por haber jugado!!!");
-							Console.WriteLine();
-							Console.WriteLine("Hasta la proxima. . .");
-							Console.WriteLine();
-							Environment.Exit(0);
-							break;
-					}
-					break;
+				Int32.TryParse(entrada, out carta);
+				while (!naipes.Contains(carta))
+				{
+					Console.Write("Ha elegido una opcion Invalida. Por favor arroje otro naipe: ");
+					entrada = Console.ReadLine();
+					Int32.TryParse(entrada, out carta);//toma la variable entrada, la convierte a int y la devuelve como carta
+				}
+			}
+			else
+			{
+				var random = new Random();
+				int index = random.Next(naipes.Count);
+				carta = naipes[index];
+				Console.Write("Ingrese naipe: " + carta.ToString());
 			}
 			return carta;
 		}

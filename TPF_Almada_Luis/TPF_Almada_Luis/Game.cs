@@ -52,8 +52,10 @@ namespace TPF_Almada_Luis
 		private void printWinner()
 		{
 			if (!juegaHumano) {
+				Console.Clear();
 				Console.WriteLine("Ud ha ganado!!!");
 			} else {
+				Console.Clear();
 				Console.WriteLine("G A M E  O V E R - - - Ha ganado Computer!!!");
 			}
 			
@@ -67,10 +69,49 @@ namespace TPF_Almada_Luis
 		{
 			while (!this.fin()) {
 				this.printScreen();
-				this.turn(player2, player1, naipesHuman); // Juega el usuario
-				if (!this.fin()) {
-					this.printScreen();
-					this.turn(player1, player2, naipesComputer); // Juega la IA
+				Console.WriteLine();
+				Console.WriteLine("Desea continuar?(S/N): ");
+				string cont = Console.ReadLine();
+				switch (cont)
+				{
+					case "s":
+					case "S":
+						this.turn(player2, player1, naipesHuman); // Juega el usuario
+						if (!this.fin()) {
+							this.printScreen();
+							this.turn(player1, player2, naipesComputer); // Juega la IA
+						}
+						break;
+					case "n":
+					case "N":
+						Console.Clear();
+						Console.WriteLine();
+						Console.WriteLine("Desea ?(S/N): ");
+						Console.WriteLine("G A M E  O V E R");
+						Console.WriteLine();
+						Console.Write("Desea iniciar una nueva partida (S/N): ");
+						string cont1 = Console.ReadLine();
+						switch (cont1)
+						{
+							case "s":
+							case "S":
+								Game game=new Game();
+								game.play();
+								break;
+							case "n":
+							case "N":
+								Console.Clear();
+								Console.WriteLine("G A M E  O V E R");
+								Console.WriteLine();
+								Console.WriteLine("Gracias por haber jugado!!!");
+								Console.WriteLine();
+								Console.WriteLine("Hasta la proxima. . .");
+								Console.WriteLine();
+								Environment.Exit(0);
+								break;
+									
+						}
+					break;						
 				}
 			}
 			this.printWinner();
