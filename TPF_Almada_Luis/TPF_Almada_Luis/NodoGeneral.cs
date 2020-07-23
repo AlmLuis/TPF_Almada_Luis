@@ -5,10 +5,8 @@ namespace TPF_Almada_Luis
 {
 	public class NodoGeneral<T>
 	{
-		private T dato;
-		
-		private List<NodoGeneral<T>> hijos;
-		
+		private T dato;		
+		private List<NodoGeneral<T>> hijos;		
 		public NodoGeneral(T dato){		
 			this.dato = dato;
 			this.hijos = new List<NodoGeneral<T>>();
@@ -51,6 +49,5 @@ namespace TPF_Almada_Luis
 				hijo.preOrden();
 			}
 		}
-
 	}
 }

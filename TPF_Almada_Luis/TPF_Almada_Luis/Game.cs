@@ -16,26 +16,21 @@ namespace TPF_Almada_Luis
 		private List<int> naipesHuman = new List<int>();
 		private List<int> naipesComputer = new List<int>();
 		private int limite;
-		private bool juegaHumano = false;
-		
+		private bool juegaHumano = false;		
 		
 		public Game()
 		{
 			var rnd = new Random();
-			limite = rnd.Next(LOWER, UPPER);
-			
-			naipesHuman = Enumerable.Range(1, WIDTH).OrderBy(x => rnd.Next()).Take(WIDTH / 2).ToList();
-			
+			limite = rnd.Next(LOWER, UPPER);			
+			naipesHuman = Enumerable.Range(1, WIDTH).OrderBy(x => rnd.Next()).Take(WIDTH / 2).ToList();			
 			for (int i = 1; i <= WIDTH; i++) {
 				if (!naipesHuman.Contains(i)) {
 					naipesComputer.Add(i);
 				}
 			}
 			player1.incializar(naipesComputer, naipesHuman, limite);
-			player2.incializar(naipesHuman, naipesComputer, limite);
-			
-		}
-		
+			player2.incializar(naipesHuman, naipesComputer, limite);			
+		}	
 		
 		private void printScreen()
 		{
@@ -53,10 +48,7 @@ namespace TPF_Almada_Luis
 			limite -= carta;
 			oponente.cartaDelOponente(carta);
 			juegaHumano = !juegaHumano;
-		}
-		
-		
-		
+		}		
 		private void printWinner()
 		{
 			if (!juegaHumano) {
@@ -65,8 +57,7 @@ namespace TPF_Almada_Luis
 				Console.WriteLine("G A M E  O V E R - - - Ha ganado Computer!!!");
 			}
 			
-		}
-		
+		}		
 		private bool fin()
 		{
 			return limite < 0;
@@ -83,8 +74,6 @@ namespace TPF_Almada_Luis
 				}
 			}
 			this.printWinner();
-		}
-		
-		
+		}		
 	}
 }

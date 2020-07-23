@@ -3,43 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
+
 namespace TPF_Almada_Luis
 {
-
 	public class HumanPlayer : Jugador
 	{
 		private List<int> naipes = new List<int>();
 		private List<int> naipesComputer = new List<int>();
 		private int limite;
 		private bool random_card = false;
-		
-		
-		public HumanPlayer(){}
-		
+		public HumanPlayer() { }
 		public HumanPlayer(bool random_card)
 		{
 			this.random_card = random_card;
 		}
-		
-		public override void  incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
+		public override void incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
 		{
 			this.naipes = cartasPropias;
 			this.naipesComputer = cartasOponente;
 			this.limite = limite;
 		}
-		
 		public override int descartarUnaCarta()
 		{
 			int carta = 0;
 			Console.WriteLine("Sus naipes disponibles son:");
-			for (int i = 0; i < naipes.Count; i++) {
+			for (int i = 0; i < naipes.Count; i++)
+			{
 				Console.Write(naipes[i].ToString());
-				if (i<naipes.Count-1) {
+				if (i < naipes.Count - 1)
+				{
 					Console.Write(", ");
 				}
 			}
-
-			// a desde aca estoy probando q se muestren las cartas de la IA
+			// desde aca estoy probando q se muestren las cartas de la IA
 			Console.WriteLine("\n");
 			Console.WriteLine("Los naipes de Computer son:");
 			for (int i = 0; i < naipesComputer.Count; i++)
@@ -50,9 +46,7 @@ namespace TPF_Almada_Luis
 					Console.Write(", ");
 				}
 			}
-
 			// hasta aca es lo q agregue
-
 			Console.WriteLine();
 			Console.Write("Desea realizar una jugada?(S/N): ");
 			string cont = Console.ReadLine();
@@ -70,7 +64,7 @@ namespace TPF_Almada_Luis
 						{
 							Console.Write("Ha elegido una opcion Invalida. Por favor arroje otro naipe:");
 							entrada = Console.ReadLine();
-							Int32.TryParse(entrada, out carta);
+							Int32.TryParse(entrada, out carta);//toma la variable entrada, la convierte a int y la devuelve como carta
 						}
 					}
 					else
@@ -81,7 +75,6 @@ namespace TPF_Almada_Luis
 						Console.Write("Ingrese naipe:" + carta.ToString());
 					}
 					break;
-
 				case "n":
 				case "N":
 					Console.Clear();
@@ -110,14 +103,11 @@ namespace TPF_Almada_Luis
 							break;
 					}
 					break;
-
 			}
-			
-			
 			return carta;
 		}
-		
-		public override void cartaDelOponente(int carta){
-		}		
+		public override void cartaDelOponente(int carta)
+		{
+		}
 	}
 }
