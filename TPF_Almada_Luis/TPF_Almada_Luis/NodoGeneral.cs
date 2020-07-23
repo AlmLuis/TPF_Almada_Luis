@@ -29,6 +29,28 @@ namespace TPF_Almada_Luis
 		public void setHijos(List<NodoGeneral<T>> hijos){		
 			this.hijos = hijos;
 		}
-	
+
+		public void inOrden()
+		{
+			if (this.hijos.Count > 0)
+			{
+				this.hijos[0].inOrden();
+			}
+			Console.WriteLine(this.dato);
+			for (int i = 1; i < this.hijos.Count; i++)
+			{
+				this.hijos[i].inOrden();
+			}
+		}
+
+		public void preOrden()
+		{
+			Console.WriteLine(this.dato);
+			foreach (NodoGeneral<T> hijo in this.hijos)
+			{
+				hijo.preOrden();
+			}
+		}
+
 	}
 }

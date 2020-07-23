@@ -6,20 +6,28 @@ namespace TPF_Almada_Luis
 {
 	public class ComputerPlayer: Jugador
 	{
-		private List<int> naipes = new List<int>();
-		private List<int> naipesHuman = new List<int>();
-		private int limite;
-		private bool random_card = false;
-				
+		private ArbolGeneral<int> arbol;
+								
 		public ComputerPlayer()
-		{			
+		{
+			arbol = new ArbolGeneral<int>(-1);
 		}
-		
+
+		private void llenarArbol(ArbolGeneral<int> nodoCarta, List<int> cartasPropias, List<int> cartasOponente)
+		{
+			List<int> naipesNoJugados = new List<int>(cartasPropias);
+			naipesNoJugados.Remove(nodoCarta.getDatoRaiz());
+			foreach(int cartaOponente in cartasOponente)
+			{
+				ArbolGeneral<int> nodoCartaOponente = new ArbolGeneral<int>(cartaOponente);
+				llenarArbol(nodoCartaOponente, cartasOponente, naipesNoJugados);
+				nodoCarta.agregarHijo(nodoCartaOponente);
+			}
+		}
 		public override void  incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
 		{
-			this.naipes = cartasPropias;
-			this.naipesHuman = cartasOponente;
-			this.limite = limite;
+			llenarArbol(this.arbol, cartasPropias, cartasOponente);
+			
 		}
 				
 		public override int descartarUnaCarta()

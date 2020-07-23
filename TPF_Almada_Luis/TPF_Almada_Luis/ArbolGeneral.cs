@@ -48,13 +48,57 @@ namespace TPF_Almada_Luis
 		}
 	
 		public int altura() {
-			return 0;
+			int alturaMaxima = 0;
+			int alturaTemporal;
+			
+			if (this.esHoja())
+			{
+				return alturaMaxima;
+			}
+			else
+			{
+				alturaTemporal = altura() + 1;
+				alturaMaxima = alturaTemporal;
+			}
+
+			return alturaMaxima;
 		}
 	
 		
 		public int nivel(T dato) {
 			return 0;
 		}
-	
+
+		public void inOrden()
+		{
+			this.raiz.inOrden();
+		}
+
+		public void preOrden()
+		{
+			this.raiz.preOrden();
+		}
+
+		public void porNivel()
+		{
+			Cola<NodoGeneral<T>> cola = new Cola<NodoGeneral<T>>();
+
+			cola.encolar(this.getRaiz());
+
+			while (!cola.esVacia())
+			{
+
+
+				NodoGeneral<T> nodo = cola.desencolar();
+				Console.WriteLine(nodo.getDato());
+				foreach (NodoGeneral<T> element in nodo.getHijos())
+				{
+					cola.encolar(element);
+				}
+			}
+
+
+		}
+
 	}
 }
