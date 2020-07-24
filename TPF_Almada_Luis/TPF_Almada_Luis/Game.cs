@@ -16,7 +16,8 @@ namespace TPF_Almada_Luis
 		private List<int> naipesHuman = new List<int>();
 		private List<int> naipesComputer = new List<int>();
 		private int limite;
-		private bool juegaHumano = false;		
+		private bool juegaHumano = false;
+			
 		
 		public Game()
 		{
@@ -31,6 +32,8 @@ namespace TPF_Almada_Luis
 			player1.incializar(naipesComputer, naipesHuman, limite);
 			player2.incializar(naipesHuman, naipesComputer, limite);			
 		}	
+		
+		
 		
 		private void printScreen()
 		{
@@ -70,7 +73,7 @@ namespace TPF_Almada_Luis
 			while (!this.fin()) {
 				this.printScreen();
 				Console.WriteLine();
-				Console.WriteLine("Desea continuar?(S/N): ");
+				Console.Write("Desea continuar?(S/N): ");
 				string cont = Console.ReadLine();
 				switch (cont)
 				{

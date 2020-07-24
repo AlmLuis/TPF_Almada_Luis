@@ -69,6 +69,7 @@ namespace TPF_Almada_Luis
 				carta = naipes[index];
 				Console.Write("Ingrese naipe: " + carta.ToString());
 			}
+			naipes.Remove(carta);
 			return carta;
 		}
 		public override void cartaDelOponente(int carta)
