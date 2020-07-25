@@ -12,17 +12,23 @@ namespace TPF_Almada_Luis
 		private List<int> naipesComputer = new List<int>();
 		private int limite;
 		private bool random_card = false;
-		public HumanPlayer() { }
+		
+		public HumanPlayer() 
+		{
+		}
+		
 		public HumanPlayer(bool random_card)
 		{
 			this.random_card = random_card;
 		}
+		
 		public override void incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
 		{
 			this.naipes = cartasPropias;
 			this.naipesComputer = cartasOponente;
 			this.limite = limite;
 		}
+		
 		public override int descartarUnaCarta()
 		{
 			int carta = 0;
@@ -36,8 +42,7 @@ namespace TPF_Almada_Luis
 				}
 			}
 			// desde aca estoy probando q se muestren las cartas de la IA
-			Console.WriteLine("\n");
-			Console.WriteLine("Los naipes de Computer son:");
+			Console.WriteLine("\nLos naipes de Computer son:");
 			for (int i = 0; i < naipesComputer.Count; i++)
 			{
 				Console.Write(naipesComputer[i].ToString());
@@ -46,18 +51,16 @@ namespace TPF_Almada_Luis
 					Console.Write(", ");
 				}
 			}
-			// hasta aca es lo q agregue
 			if (!random_card)
 			{
 				Console.WriteLine();
 				Console.WriteLine();
-				Console.Write("Cual desea arrojar? ");
+				Console.Write("Cual desea arrojar?: ");
 				string entrada = Console.ReadLine();
-
 				Int32.TryParse(entrada, out carta);
 				while (!naipes.Contains(carta))
 				{
-					Console.Write("Ha elegido una opcion Invalida. Por favor arroje otro naipe: ");
+					Console.Write("\nHa elegido una opcion incorrecta! ! !\nPor favor arroje otro naipe: ");
 					entrada = Console.ReadLine();
 					Int32.TryParse(entrada, out carta);//toma la variable entrada, la convierte a int y la devuelve como carta
 				}

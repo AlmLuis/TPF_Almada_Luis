@@ -8,7 +8,7 @@ namespace TPF_Almada_Luis
 		{
 			Console.WriteLine("B i e n v e n i d o ! ! !");
 			Console.WriteLine();
-			Console.WriteLine("Presione una tecla para iniciar,de lo contrario pulse 'Q' para salir. . .");
+			Console.WriteLine("Presione Enter para iniciar una partida. . .\nPulse 'Q' para salir. . .");			
 			string opcion = Console.ReadLine();
 			if (opcion == "Q" || opcion == "q"){
 				Console.WriteLine();

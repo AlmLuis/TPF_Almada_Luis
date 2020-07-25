@@ -9,15 +9,13 @@ namespace TPF_Almada_Luis
 	{
 		public static int WIDTH = 12;
 		public static int UPPER = 35;
-		public static int LOWER = 25;
-		
+		public static int LOWER = 25;		
 		private Jugador player1 = new ComputerPlayer();
 		private Jugador player2 = new HumanPlayer();
 		private List<int> naipesHuman = new List<int>();
 		private List<int> naipesComputer = new List<int>();
 		private int limite;
-		private bool juegaHumano = false;
-			
+		private bool juegaHumano = false;			
 		
 		public Game()
 		{
@@ -31,17 +29,13 @@ namespace TPF_Almada_Luis
 			}
 			player1.incializar(naipesComputer, naipesHuman, limite);
 			player2.incializar(naipesHuman, naipesComputer, limite);			
-		}	
-		
-		
+		}		
 		
 		private void printScreen()
 		{
 			Console.Clear();
-			Console.WriteLine();
-			Console.WriteLine("A pensar. . . ");
-			Console.WriteLine();
-			Console.WriteLine("El limite es:" + limite.ToString());
+			Console.WriteLine("\nA pensar. . .\n");
+			Console.WriteLine("El limite es: " + limite.ToString());
 		}
 		
 		private void turn(Jugador jugador, Jugador oponente, List<int> naipes)
@@ -52,6 +46,7 @@ namespace TPF_Almada_Luis
 			oponente.cartaDelOponente(carta);
 			juegaHumano = !juegaHumano;
 		}		
+		
 		private void printWinner()
 		{
 			if (!juegaHumano) {
@@ -63,6 +58,7 @@ namespace TPF_Almada_Luis
 			}
 			
 		}		
+		
 		private bool fin()
 		{
 			return limite < 0;
@@ -72,8 +68,7 @@ namespace TPF_Almada_Luis
 		{
 			while (!this.fin()) {
 				this.printScreen();
-				Console.WriteLine();
-				Console.Write("Desea continuar?(S/N): ");
+				Console.Write("\nDesea continuar?(S/N): ");
 				string cont = Console.ReadLine();
 				switch (cont)
 				{
@@ -88,10 +83,7 @@ namespace TPF_Almada_Luis
 					case "n":
 					case "N":
 						Console.Clear();
-						Console.WriteLine();
-						Console.WriteLine("Desea ?(S/N): ");
-						Console.WriteLine("G A M E  O V E R");
-						Console.WriteLine();
+						Console.WriteLine("\nG A M E  O V E R\n");
 						Console.Write("Desea iniciar una nueva partida (S/N): ");
 						string cont1 = Console.ReadLine();
 						switch (cont1)
@@ -104,15 +96,12 @@ namespace TPF_Almada_Luis
 							case "n":
 							case "N":
 								Console.Clear();
-								Console.WriteLine("G A M E  O V E R");
-								Console.WriteLine();
-								Console.WriteLine("Gracias por haber jugado!!!");
-								Console.WriteLine();
-								Console.WriteLine("Hasta la proxima. . .");
-								Console.WriteLine();
+								Console.WriteLine("G A M E  O V E R\n");
+								Console.WriteLine("Gracias por haber jugado!!!\n");
+								Console.WriteLine("Hasta la proxima. . .\n");
+								Console.ReadKey();
 								Environment.Exit(0);
-								break;
-									
+								break;									
 						}
 					break;						
 				}

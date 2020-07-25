@@ -18,49 +18,50 @@ namespace TPF_Almada_Luis
 		}
 		
 		public override void incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
-		{
-			
+		{			
 			this.naipes = cartasPropias;
 			this.naipesHuman = cartasOponente;
 			this.limite = limite;
 			llenarArbol(this.arbol, cartasPropias, cartasOponente);			
-		}				
+		}			
+		
 		public override int descartarUnaCarta()
 		{		
 			List<int> cartasPosibles=new List<int>();
 			int carta=0;
-			int cartaEnLista;
-			int temp=13;
+			int cartaEnLista;			
 			for (int i = 0; i < naipes.Count; i++){
 				int valorNaipe=naipes[i];
 				int newLimite;
 				newLimite = limite-valorNaipe;
-				if (newLimite >= 0 && newLimite/valorNaipe >= 0){
+				carta=valorNaipe;
+				if (newLimite >= 0){
 					for (int j = 0; j < naipesHuman.Count; j++ ){
 						int valorNaipeHuman=naipesHuman[j];
 						newLimite-=valorNaipeHuman;
-						if (newLimite < 0){
+						if (newLimite < 0 && valorNaipe >= newLimite || valorNaipeHuman <= newLimite){
 							cartaEnLista=valorNaipe;
 							if (!cartasPosibles.Contains(cartaEnLista)){
 								cartasPosibles.Add(cartaEnLista);
 							}
 						}
-					}
+					}	
 				}
 			}
+			int temp=13;
 			foreach (int elem in cartasPosibles){
 				if (elem < temp){
+					carta=elem;
 					temp=elem;
-				}
-				carta=temp;
+				}				
 			}
-			Console.WriteLine(cartasPosibles.Count);
-			Console.ReadKey();
-			Console.WriteLine(carta);
-			Console.ReadKey();
+			foreach (int c in cartasPosibles){
+				Console.WriteLine(c);
+			}
 			naipes.Remove(carta);	
 			return carta;
-		}			
+		}
+		
 		public override void cartaDelOponente(int carta)
 		{
 		}		
